@@ -44,7 +44,7 @@ def game_intro():
         print("Exiting game...")
         quit()
     else:
-        print(Fore.RED + "Invalid choice, please choose either 1, 2 or 3")
+        print(Fore.RED + "Invalid choice, please choose either 1, 2 or 3.")
 
 def game_launch():
     """
@@ -56,7 +56,7 @@ def game_launch():
     print("Enter your name:")
     name = input("> " + Fore.YELLOW + Style.NORMAL)
     print(Fore.GREEN + Style.NORMAL)
-    time_print(f"Hello {name}, welcome to...")
+    time_print(f"Hello {Fore.YELLOW + Style.BRIGHT + name + Style.NORMAL + Fore.GREEN}, welcome to...")
     time.sleep(2)
     cls()
 
@@ -74,9 +74,9 @@ def game_launch():
     time_print("Everything gets so bright your eyes start to hurt.\n")
     time_print(". . .\n\n")
     time.sleep(2)
-    time_print("You feel yourself getting sucked in, in a sense that you feel like time itself is warping.\n")
+    time_print("You feel yourself getting sucked in...\n")
     time.sleep(.5)
-    time_print("Suddenly everything goes dark..\n")
+    time_print("Suddenly everything goes dark.\n")
     time.sleep(1)
     time_print("Except for one light which seems to be in the bottom of a very deep hole.\n")
     time_print(". . .\n\n")
@@ -91,8 +91,8 @@ def game_launch():
     playerchoice1 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
     if playerchoice1 == "y":
         print(Fore.GREEN + Style.BRIGHT)
-        time_print("You jump into the hole...")
-        jump_hole()
+        time_print("You jump into the hole...\n")
+        hole_choice()
     elif playerchoice1 == "n":
         print(Fore.GREEN + Style.BRIGHT)
         time_print("You decide to stay...")
@@ -102,10 +102,47 @@ def game_launch():
         time.sleep(2)
         time_print("You eventually went insane and starved to death...\n")
         print(Fore.RED + Style.BRIGHT + "GAME OVER")
+        quit()
     else:
-        print(Fore.RED + "Invalid choice, please choose either y or n\n")
+        print(Fore.RED + "Invalid choice, please choose either y or n.\n")
 
-def jump_hole():
+def hole_choice():
+    print(Style.NORMAL)
+    time_print("You're falling towards the distant light.\n")
+    time_print("The fall is long and it takes a while.\n")
+    time_print("When you break through, you're levitating just above ground\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("You find yourself in a forest, unfamiliar yet familiar to you.\n")
+    time_print("Plants and flowers as huge as trees.\n")
+    time_print("And trees as huge as... Well you get the idea.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("You see a trail leading into the woods.\n")
+    time_print("And a lonely cabin in the opposite direction\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    print(Style.BRIGHT)
+    time_print("Would you like to follow the trail or go to the cabin?\n")
+    print("+-----------------------------------------------------------------------------+")
 
+    playerchoice2 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
+    if playerchoice2 == "trail":
+        print(Fore.GREEN + Style.BRIGHT)
+        time_print("You follow the trail...")
+        trail_choice()
+    elif playerchoice2 == "cabin":
+        print(Fore.GREEN + Style.BRIGHT)
+        time_print("You go to the cabin...")
+        cabin_choice()
+    else:
+        print(Fore.RED + "Invalid choice, please choose either trail or cabin.\n")
+
+
+def trail_choice():
+    print("trail choice")
+
+def cabin_choice():
+    print("cabin choice")
 
 game_intro()
