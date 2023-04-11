@@ -5,6 +5,7 @@ import colorama
 from colorama import Fore, Back, Style
 from pyfiglet import figlet_format
 
+
 def time_print(s):
     """
     Prints out character by character in a string
@@ -13,6 +14,7 @@ def time_print(s):
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(.05)
+
 
 def cls():
     """
@@ -54,7 +56,7 @@ def game_launch():
     cls()
     print(Fore.GREEN + Style.BRIGHT)
     print("Enter your name:")
-    name = input("> " + Fore.YELLOW + Style.NORMAL)
+    name = input("> " + Fore.YELLOW + Style.NORMAL) #make this global
     print(Fore.GREEN + Style.NORMAL)
     time_print(f"Hello {Fore.YELLOW + Style.BRIGHT + name + Style.NORMAL + Fore.GREEN}, welcome to...")
     time.sleep(2)
@@ -129,7 +131,7 @@ def hole_choice():
     playerchoice2 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
     if playerchoice2 == "trail":
         print(Fore.GREEN + Style.BRIGHT)
-        time_print("You follow the trail...")
+        time_print("You follow the trail...\n")
         trail_choice()
     elif playerchoice2 == "cabin":
         print(Fore.GREEN + Style.BRIGHT)
@@ -140,7 +142,28 @@ def hole_choice():
 
 
 def trail_choice():
-    print("trail choice")
+    print(Style.NORMAL)
+    time_print("You make your way through the trail.\n")
+    time_print("It doesn't seem to end...\n")
+    time.sleep(1)
+    time_print("As you're walking you take notice that everything is moving.\n")
+    time_print("The trees, foliage and even the sky, always in motion.\n")
+    time_print("You have been walking for hours now.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print("Hey you! " + Fore.GREEN + Style.NORMAL + "says a rabbit") #change to {name}
+    time.sleep(1)
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print("You have to follow me quick!\n")
+    time_print("There's no time to explain!")
+    print(Fore.GREEN + Style.NORMAL)
+    time_print(". . .\n\n")
+    time.sleep(2)
+    print(Fore.GREEN + Style.BRIGHT)
+    time_print("Would you like to follow the rabbit or continue on the trail?\n")
+    print("+-----------------------------------------------------------------------------+")
+
 
 def cabin_choice():
     print("cabin choice")
