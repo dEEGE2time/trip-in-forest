@@ -50,8 +50,8 @@ def game_intro():
 
 def game_launch():
     """
-    Launch game and display story
-    Let player make their first choice
+    Launch game and display story.
+    Let player make their first choice.
     """
     cls()
     print(Fore.GREEN + Style.BRIGHT)
@@ -90,6 +90,7 @@ def game_launch():
     time_print("Would you like to jump into the hole? (y/n)\n")
     print("+-----------------------------------------------------------------------------+")
 
+    # Provide result based on player choice, stay = death, jump = survive
     playerchoice1 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
     if playerchoice1 == "y":
         print(Fore.GREEN + Style.BRIGHT)
@@ -108,7 +109,12 @@ def game_launch():
     else:
         print(Fore.RED + "Invalid choice, please choose either y or n.\n")
 
+
 def hole_choice():
+    """
+    Player survives and continue game.
+    Let player make their second choice.
+    """
     print(Style.NORMAL)
     time_print("You're falling towards the distant light.\n")
     time_print("The fall is long and it takes a while.\n")
@@ -128,6 +134,7 @@ def hole_choice():
     time_print("Would you like to follow the trail or go to the cabin?\n")
     print("+-----------------------------------------------------------------------------+")
 
+    # Provide result based on player choice, trail = survive, cabin = death
     playerchoice2 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
     if playerchoice2 == "trail":
         print(Fore.GREEN + Style.BRIGHT)
@@ -142,6 +149,10 @@ def hole_choice():
 
 
 def trail_choice():
+    """
+    Player survives and continue game.
+    Let player make their third choice.
+    """
     print(Style.NORMAL)
     time_print("You make your way through the trail.\n")
     time_print("It doesn't seem to end...\n")
