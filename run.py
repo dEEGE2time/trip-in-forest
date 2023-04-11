@@ -6,14 +6,14 @@ from colorama import Fore, Back, Style
 from pyfiglet import figlet_format
 
 
-def time_print(s):
+def time_print(string):
     """
     Prints out character by character in a string
     """
-    for c in s:
-        sys.stdout.write(c)
+    for letter in string:
+        sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(.05)
+        time.sleep(0)
 
 
 def cls():
@@ -80,7 +80,7 @@ def game_launch():
     time.sleep(.5)
     time_print("Suddenly everything goes dark.\n")
     time.sleep(1)
-    time_print("Except for one light which seems to be in the bottom of a very deep hole.\n")
+    time_print("Except for a light source, which seems to be in the bottom of a very deep hole.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You look around and see only pitch black.\n")
@@ -175,8 +175,36 @@ def trail_choice():
     time_print("Would you like to follow the rabbit or continue on the trail?\n")
     print("+-----------------------------------------------------------------------------+")
 
+    # Provide result based on player choice, rabbit = survive, trail = death
+    playerchoice3 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
+    if playerchoice3 == "rabbit":
+        print(Fore.GREEN + Style.BRIGHT)
+        time_print("With quick thinking, you follow the rabbit.\n")
+        rabbit_choice()
+    elif playerchoice3 == "trail":
+        print(Fore.GREEN + Style.BRIGHT)
+        time_print("With rational thinking, you decide to stay on the trail\n")
+        time_print("You keep on walking as the rabbit bounces away.\n")
+        time_print(". . .")
+        time.sleep(3)
+        print(Fore.RED + Style.DIM)
+        time_print("\n")
+        time.sleep(2)
+        time_print("You have been walking for years now, yes, years.\n")
+        time.sleep(1)
+        time_print("You are but a mindless corpse.\n")
+        time.sleep(1)
+        time_print("Trapped in the soil of an endless trail.\n")
+        time.sleep(1)
+        time_print("Walking...\n\n")
+        time.sleep(1)
+        print(Fore.RED + Style.BRIGHT + "GAME OVER")
+        quit()
+    else:
+        print(Fore.RED + "Invalid choice, please choose either rabbit or trail.\n")
 
-def cabin_choice():
-    print("cabin choice")
+
+def rabbit_choice():
+    print("rabbit")
 
 game_intro()
