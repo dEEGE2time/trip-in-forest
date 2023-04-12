@@ -5,6 +5,7 @@ import colorama
 from colorama import Fore, Back, Style
 from pyfiglet import figlet_format
 
+rope = False
 
 def time_print(string):
     """
@@ -237,11 +238,13 @@ def cabin_area():
         choice_cellar = input("> " + Fore.YELLOW).lower().strip()
         if choice_cellar == "y":
             print(Fore.GREEN)
-            print("explore cellar")
+            time_print("You decide to explore the cellar...\n")
+            time.sleep(2)
+            cellar_area()
             break
         elif choice_cellar == "n":
             print(Fore.GREEN)
-            time_print("You leave the house and follow the trail instead...")
+            time_print("You leave the house and follow the trail instead...\n")
             time.sleep(2)
             trail_area()
             break
@@ -249,6 +252,43 @@ def cabin_area():
             print(Fore.RED + "Invalid choice, please choose either y or n.\n")
             print(Fore.YELLOW)
 
+
+def cellar_area():
+    print(Style.NORMAL)
+    time_print("In the cellar you see a rope holding together two beams that is supporting the cabin.\n")
+    time_print("You could collect the rope but the cabin is old and unsteady.\n")
+    time_print(". . .\n")
+    time.sleep(2)
+    print(Fore.YELLOW + Style.DIM)
+    time_print("I could collect the ropes but it's risky, the cabin might collapse. " + Fore.GREEN + Style.NORMAL + "You think to yourself.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    print(Style.BRIGHT)
+    time_print("Would you like to collect the rope? (y/n)\n")
+    print("+-----------------------------------------------------------------------------+")
+
+    while True:
+        choice_rope = input("> " + Fore.YELLOW).lower().strip()
+        if choice_rope == "y":
+            print(Fore.GREEN)
+            time_print("You collected the rope...\n")
+            time_print("You took a chance and the building seems to be fine.\n")
+            rope = True
+            after_rope_area()
+            break
+        elif choice_rope == "n":
+            print(Fore.GREEN)
+            time_print("You decide not to collect the rope...\n")
+            after_rope_area()
+            break
+        else:
+            print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+            print(Fore.YELLOW)
+
+
+def after_rope_area():
+    print(Style.NORMAL)
+    print("after rope")
 
 
 def rabbit_area():
