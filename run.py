@@ -75,42 +75,41 @@ def game_launch():
     time_print("You see lights, colors, geometrical shapes "
                "and a bright shimmer in the distance.\n"
             )
-    time.sleep(.5)
     time_print("You feel like you're traveling at unnatural speeds against the shimmer of lights.\n")
-    time.sleep(.5)
     time_print("Everything gets so bright your eyes start to hurt.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You feel yourself getting sucked in...\n")
-    time.sleep(.5)
     time_print("Suddenly everything goes dark.\n")
-    time.sleep(1)
     time_print("Except for a light source, which seems to be in the bottom of a very deep hole.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You look around and see only pitch black.\n")
-    time_print("After your calculations, you can either jump into the hole or stay in this dark space.\n\n")
-    time.sleep(1)
+    time_print("After your calculations, you can either jump into the hole or stay in this dark space.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
     print(Fore.LIGHTGREEN_EX + Style.BRIGHT)
     time_print("Would you like to jump into the hole? (y/n)\n")
     print("+-----------------------------------------------------------------------------+")
 
     # Provide result based on player choice, stay = death, jump = survive
     while True:
-        playerchoice1 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
-        if playerchoice1 == "y":
+        choice_hole = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
+        if choice_hole == "y":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You jump into the hole...\n")
-            hole_choice()
+            time.sleep(2)
+            hole_area()
             break
-        elif playerchoice1 == "n":
+        elif choice_hole == "n":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You decide to stay...")
             time.sleep(3)
             print(Fore.RED + Style.DIM)
             time_print("You stayed in this dark space for weeks...\n")
-            time.sleep(2)
-            time_print("You eventually went insane and starved to death...\n")
+            time.sleep(1)
+            time_print("You eventually went insane and starved to death...\n\n")
+            time.sleep(1)
             print(Fore.RED + Style.BRIGHT + "GAME OVER")
             quit()
         else:
@@ -118,15 +117,15 @@ def game_launch():
             print(Fore.YELLOW)
 
 
-def hole_choice():
+def hole_area():
     """
-    Player survives and continue game.
+    Player survives hole and continues game.
     Let player make their second choice.
     """
     print(Style.NORMAL)
     time_print("You're falling towards the distant light.\n")
     time_print("The fall is long and it takes a while.\n")
-    time_print("When you break through, you're levitating just above ground\n")
+    time_print("When you break through, you're levitating just above ground.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You find yourself in a forest, unfamiliar yet familiar to you.\n")
@@ -135,39 +134,41 @@ def hole_choice():
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You see a trail leading into the woods.\n")
-    time_print("And a lonely cabin in the opposite direction\n")
+    time_print("And a lonely cabin in the opposite direction.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     print(Style.BRIGHT)
     time_print("Would you like to follow the trail or go to the cabin?\n")
     print("+-----------------------------------------------------------------------------+")
 
-    # Provide result based on player choice, trail = survive, cabin = death
+    # Provide result based on player choice, trail = path 1, cabin = path 2
     while True:
-        playerchoice2 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
-        if playerchoice2 == "trail":
+        choice_trail_cabin = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
+        if choice_trail_cabin == "trail":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You follow the trail...\n")
-            trail_choice()
+            time.sleep(2)
+            trail_area()
             break
-        elif playerchoice2 == "cabin":
+        elif choice_trail_cabin == "cabin":
             print(Fore.GREEN + Style.BRIGHT)
-            time_print("You go to the cabin...")
+            time_print("You go to the cabin...\n")
+            time.sleep(2)
+            cabin_area()
             break
         else:
             print(Fore.RED + "Invalid choice, please choose either trail or cabin.\n")
             print(Fore.YELLOW)
 
 
-def trail_choice():
+def trail_area():
     """
-    Player survives and continue game.
-    Let player make their third choice.
+    Player chose trail and continues game.
+    Let player make their third choice (path 1).
     """
     print(Style.NORMAL)
     time_print("You make your way through the trail.\n")
     time_print("It doesn't seem to end...\n")
-    time.sleep(1)
     time_print("As you're walking you take notice that everything is moving.\n")
     time_print("The trees, foliage and even the sky, always in motion.\n")
     time_print("You have been walking for hours now.\n")
@@ -188,13 +189,14 @@ def trail_choice():
 
     # Provide result based on player choice, rabbit = survive, trail = death
     while True:
-        playerchoice3 = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
-        if playerchoice3 == "rabbit":
+        choice_rabbit_trail = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
+        if choice_rabbit_trail == "rabbit":
             print(Fore.GREEN + Style.BRIGHT)
-            time_print("With quick thinking, you follow the rabbit.\n\n")
-            rabbit_choice()
+            time_print("With quick thinking, you follow the rabbit...\n\n")
+            time.sleep(2)
+            rabbit_area()
             break
-        elif playerchoice3 == "trail":
+        elif choice_rabbit_trail == "trail":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("With rational thinking, you decide to stay on the trail\n")
             time_print("You keep on walking as the rabbit bounces away.\n")
@@ -217,36 +219,73 @@ def trail_choice():
             print(Fore.RED + "Invalid choice, please choose either rabbit or trail.\n")
             print(Fore.YELLOW)
 
+def cabin_area():
+    """
+    Player chose cabin and continues game.
+    Let player make their third choice (path 2).
+    """
+    print(Fore.GREEN + Style.NORMAL)
+    time_print("The door was open so you enter the cabin.\n")
+    time_print("It seems familiar to you.\n")
+    time_print("You explore around and see a staircase down to a cellar.\n")
+    time_print(". . .\n\n")
+    print(Style.BRIGHT)
+    time_print("Would you like to explore the cellar? (y/n)\n")
+    print("+-----------------------------------------------------------------------------+")
+
+    while True:
+        choice_cellar = input("> " + Fore.YELLOW).lower().strip()
+        if choice_cellar == "y":
+            print(Fore.GREEN)
+            print("explore cellar")
+            break
+        elif choice_cellar == "n":
+            print(Fore.GREEN)
+            time_print("You leave the house and follow the trail instead...")
+            time.sleep(2)
+            trail_area()
+            break
+        else:
+            print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+            print(Fore.YELLOW)
 
 
-def rabbit_choice():
+
+def rabbit_area():
+    """
+    Player survives trail and continues game.
+    Let player make their fourth choice (path 1)
+    """
     print(Fore.GREEN + Style.NORMAL)
     time_print("The rabbit is bouncing further in to the woods as you try to follow.\n")
-    time_print("You trip on some roots takes a fall.\n") #maybe get character injured for future interactions
+    time_print("You trip on some roots and take a fall.\n") #maybe get character injured for future interactions
+    time_print(". . .\n\n")
+    time.sleep(2)
     time_print("You look around for the rabbit, but it's gone.\n")
-    time_print("You've gone way deep in to be able to find the way back now.")
-    time_print(". . .")
-    time.sleep(1)
+    time_print("You've gone way deep in to be able to find the way back now.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
     print(Fore.YELLOW + Style.DIM)
     time_print("Maybe I should've stayed on the trail. " + Fore.GREEN + Style.NORMAL + "You think to yourself.\n\n")
     time_print("You hear a rumbling noise coming from your stomach, you're hungry.\n")
     time_print("You're walking around in the forest as you stumble upon a tasty looking mushroom.\n")
-    time.sleep(1)
+    time_print(". . .\n")
+    time.sleep(2)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print("EAT ME!\n")
     time.sleep(1)
     print(Fore.GREEN + Style.NORMAL)
-    time_print("You look around but see nothing.\n")
-    time.sleep(1)
+    time_print("You look around but see nothing...\n")
+    time.sleep(2)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print("BACKSIDE OF THE MUSHROOM GOOF!\n")
     time.sleep(1)
     print(Fore.GREEN + Style.NORMAL)
-    time_print("You walk around to see the backside of the mushroom\n")
+    time_print("You walk around to see the backside of the mushroom.\n")
     time.sleep(1)
     time_print("You're trippin out, screaming and yelling\n")
     print(Fore.YELLOW + Style.BRIGHT)
-    time_print("WHAT THE FUCK?!\n")
+    time_print("WHAT THE F#CK?!\n")
     time.sleep(1)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print("HEY, WHAT'S WITH THE RUDE MANNER HERE?\n")
@@ -255,7 +294,7 @@ def rabbit_choice():
     time_print("...\n")
     time.sleep(1)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
-    time_print("SO YOU GONNA EAT ME OR NO?\n")
+    time_print("SO YOU GONNA EAT ME OR NOT?\n")
     time.sleep(1)
     print(Fore.YELLOW + Style.BRIGHT)
     time_print("...\n\n")
@@ -265,8 +304,8 @@ def rabbit_choice():
     print("+-----------------------------------------------------------------------------+")
 
     while True:
-        playerchoice4 = input("> " + Fore.YELLOW).lower().strip()
-        if playerchoice4 == "y":
+        choice_mshroom = input("> " + Fore.YELLOW).lower().strip()
+        if choice_mshroom == "y":
             print(Fore.GREEN)
             time_print("You eat the mushroom...\n\n")
             time.sleep(3)
@@ -275,16 +314,18 @@ def rabbit_choice():
             time_print("Tragic...\n\n")
             print("GAME OVER")
             quit()
-        elif playerchoice4 == "n":
+        elif choice_mshroom == "n":
             print(Fore.GREEN)
             time_print("You choose not to eat the mushroom...\n\n")
-            mushroom_choice()
+            time.sleep(2)
+            mushroom_area()
             break
         else:
             print(Fore.RED + "Invalid choice, please choose either y or n.\n")
             print(Fore.YELLOW)
 
-def mushroom_choice():
+def mushroom_area():
+    print(Style.NORMAL)
     print("survive")
 
 game_intro()
