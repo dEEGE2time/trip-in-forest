@@ -153,7 +153,7 @@ def hole_choice():
         elif playerchoice2 == "cabin":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You go to the cabin...")
-            quit()
+            break
         else:
             print(Fore.RED + "Invalid choice, please choose either trail or cabin.\n")
             print(Fore.YELLOW)
@@ -218,6 +218,7 @@ def trail_choice():
             print(Fore.YELLOW)
 
 
+
 def rabbit_choice():
     print(Fore.GREEN + Style.NORMAL)
     time_print("The rabbit is bouncing further in to the woods as you try to follow.\n")
@@ -263,5 +264,27 @@ def rabbit_choice():
     time_print("Would you like to eat the mushroom? (y/n)\n")
     print("+-----------------------------------------------------------------------------+")
 
+    while True:
+        playerchoice4 = input("> " + Fore.YELLOW).lower().strip()
+        if playerchoice4 == "y":
+            print(Fore.GREEN)
+            time_print("You eat the mushroom...\n\n")
+            time.sleep(3)
+            print(Fore.RED + Style.BRIGHT)
+            time_print("You die of food poisoning.\n")
+            time_print("Tragic...\n\n")
+            print("GAME OVER")
+            quit()
+        elif playerchoice4 == "n":
+            print(Fore.GREEN)
+            time_print("You choose not to eat the mushroom...\n\n")
+            mushroom_choice()
+            break
+        else:
+            print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+            print(Fore.YELLOW)
+
+def mushroom_choice():
+    print("survive")
 
 game_intro()
