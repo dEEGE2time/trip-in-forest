@@ -1,11 +1,11 @@
 import os
 import time
 import sys
-import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 from pyfiglet import figlet_format
 
 rope = False
+name = ""
 
 def time_print(string):
     """
@@ -61,6 +61,7 @@ def game_launch():
     """
     cls()
     print(Fore.GREEN + Style.BRIGHT)
+    global name
     print("Enter your name:")
     name = input("> " + Fore.YELLOW + Style.NORMAL) #make this global
     print(Fore.GREEN + Style.NORMAL)
@@ -266,7 +267,7 @@ def cellar_area():
     print(Style.BRIGHT)
     time_print("Would you like to collect the rope? (y/n)\n")
     print("+-----------------------------------------------------------------------------+")
-
+    global rope
     while True:
         choice_rope = input("> " + Fore.YELLOW).lower().strip()
         if choice_rope == "y":
