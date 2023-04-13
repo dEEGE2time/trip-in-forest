@@ -4,6 +4,10 @@ import sys
 from colorama import Fore, Style
 from pyfiglet import figlet_format
 
+# main menu list
+mm_options = ["Play Game", "Instructions", "Exit Game"]
+
+# global variables
 rope = False
 name = ""
 
@@ -33,9 +37,9 @@ def game_intro():
         ))
     print(figlet_format("Trip in forest", font="larry3d", justify="center"))
     print("+-----------------------------------------------------------------------------+")
-    print("1. Play Game")
-    print("2. Instructions")
-    print("3. Exit Game")
+    print(f"1. {mm_options[0]}")
+    print(f"2. {mm_options[1]}")
+    print(f"3. {mm_options[2]}")
     print("+-----------------------------------------------------------------------------+")
 
     while True:
