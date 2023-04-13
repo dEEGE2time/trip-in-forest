@@ -478,4 +478,5 @@ def mushroom_area():
     print("survive")
 
 
-game_intro()
+if __name__ == '__main__':
+    game_intro()
