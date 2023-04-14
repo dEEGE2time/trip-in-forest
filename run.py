@@ -10,6 +10,7 @@ mm_options = ["Play Game", "Instructions", "Exit Game"]
 # global variables
 rope = False
 name = ""
+mshroom = False
 
 
 def time_print(string):
@@ -79,7 +80,7 @@ def game_launch():
     print(Fore.GREEN + Style.BRIGHT)
     global name
     print("Enter your name:")
-    name = input("> " + Fore.YELLOW + Style.NORMAL)  # make this global
+    name = input("> " + Fore.YELLOW + Style.NORMAL)
     print(Fore.GREEN + Style.NORMAL)
     time_print(
         f"Hello {Fore.YELLOW + Style.BRIGHT + name + Style.NORMAL + Fore.GREEN}, welcome to..."
@@ -230,7 +231,7 @@ def trail_area():
     time.sleep(2)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print(
-        "Hey you! " + Fore.GREEN + Style.NORMAL + "says a rabbit"
+        f"Hey {Fore.YELLOW + name}! " + Fore.GREEN + Style.NORMAL + "says a rabbit"
     )  # change to {name}
     time.sleep(1)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
@@ -466,17 +467,58 @@ def rabbit_area():
             print(Fore.GREEN)
             time_print("You choose not to eat the mushroom...\n\n")
             time.sleep(2)
-            mushroom_area()
+            mshroom_area()
             break
         else:
             print(Fore.RED + "Invalid choice, please choose either y or n.\n")
             print(Fore.YELLOW)
 
 
-def mushroom_area():
-    print(Style.NORMAL)
-    print("survive")
+def mshroom_area():
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print("Bummer...\n")
+    time.sleep(1)
+    time_print("You see, I've been stuck here since the beginning of time.\n")
+    time_print("Hell, probably before that too.\n\n")
+    time.sleep(1)
+    time_print("How about you take me with you eh?\n")
+    time_print("I could be your companion, whaddya say?\n")
+    time_print(". . .\n")
+    time.sleep(1)
+    print(Fore.GREEN)
+    time_print("Would you like to bring the mushroom with you? (y/n)\n")
+    print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+    )
 
+    while True:
+        global mshroom
+        choice_mshroom_bring = input("> " + Fore.YELLOW).lower().strip()
+        if choice_mshroom_bring == "y":
+            print(Fore.GREEN)
+            print("You bring mushroom\n")
+            mshroom = True
+            after_mshroom_area()
+            break
+        elif choice_mshroom_bring == "n":
+            print(Fore.GREEN)
+            print("You don't bring mushroom\n")
+            after_mshroom_area()
+            break
+        else:
+            print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+            print(Fore.YELLOW)
+
+
+def after_mshroom_area():
+    global mshroom
+    if mshroom == True:
+        print(Fore.LIGHTBLUE_EX)
+        print("mushroom talk")
+    elif mshroom == False:
+        print(Fore.GREEN + Style.NORMAL)
+        print("look around")
 
 if __name__ == '__main__':
-    game_intro()
+    rabbit_area()
