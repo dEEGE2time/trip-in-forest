@@ -497,13 +497,15 @@ def mshroom_area():
         choice_mshroom_bring = input("> " + Fore.YELLOW).lower().strip()
         if choice_mshroom_bring == "y":
             print(Fore.GREEN)
-            print("You bring mushroom\n")
+            print("You bring mushroom...\n")
+            time.sleep(2)
             mshroom = True
             after_mshroom_area()
             break
         elif choice_mshroom_bring == "n":
             print(Fore.GREEN)
-            print("You don't bring mushroom\n")
+            print("You don't bring mushroom...\n")
+            time.sleep(2)
             after_mshroom_area()
             break
         else:
@@ -515,10 +517,62 @@ def after_mshroom_area():
     global mshroom
     if mshroom == True:
         print(Fore.LIGHTBLUE_EX)
-        print("mushroom talk")
+        time_print("Let me tell you a secret.\n")
+        time_print(". . .\n\n")
+        time.sleep(2)
+        time_print("You see that empty patch of grass over there?\n")
+        time_print("There's a secret passage below it.\n")
+        print(Fore.GREEN + Style.NORMAL)
+        time_print(". . .\n")
+        print(Style.BRIGHT)
+        time_print("Would you like to explore the patch of grass? (y/n)\n")
+        print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+        )
+
+        while True:
+            choice_grasspatch = input("> " + Fore.YELLOW).lower().strip()
+            if choice_grasspatch == "y":
+                print("you explore the grass")
+                break
+            elif choice_grasspatch == "n":
+                print("dont explore")
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
+
+
     elif mshroom == False:
         print(Fore.GREEN + Style.NORMAL)
-        print("look around")
+        time_print("After deciding to not pick up the mushroom you continue walking the woods.\n")
+        time_print("After walking for a while you come across a waterfall.\n")
+        time.sleep(1)
+        print(Fore.YELLOW + Style.DIM)
+        time_print("Maybe there's a secret passage behind that waterfall. " + Fore.GREEN + Style.NORMAL + "You think to yourself.\n")
+        time_print(". . .\n")
+        time.sleep(2)
+        print(Style.BRIGHT)
+        time_print("Would you like to explore the waterfall? (y/n)\n")
+        print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+        )
+
+        while True:
+            choice_waterfall = input("> " + Fore.YELLOW).lower().strip()
+            if choice_waterfall == "y":
+                print("explore waterfall, no hidden passage")
+                print("death")
+                quit()
+            elif choice_waterfall == "n":
+                print("You decide to not explore the waterfall.")
+                print("survive")
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
 
 if __name__ == '__main__':
     rabbit_area()
