@@ -149,7 +149,7 @@ def game_launch():
             time_print(
                 "You eventually went insane"
                 " and starved to death...\n\n"
-            )
+                )
             time.sleep(1)
             print(Fore.RED + Style.BRIGHT + "GAME OVER")
             quit()
@@ -169,13 +169,13 @@ def hole_area():
     time_print(
         "When you break through,"
         " you're levitating just above ground.\n"
-    )
+        )
     time_print(". . .\n\n")
     time.sleep(2)
     time_print(
         "You find yourself in a forest,"
         " unfamiliar yet familiar to you.\n"
-    )
+        )
     time_print("Plants and flowers as huge as trees.\n")
     time_print("And trees as huge as... Well you get the idea.\n")
     time_print(". . .\n\n")
@@ -195,7 +195,7 @@ def hole_area():
     while True:
         choice_trail_cabin = input(
             "> " + Fore.YELLOW + Style.NORMAL
-        ).lower().strip()
+            ).lower().strip()
         if choice_trail_cabin == "trail":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You follow the trail...\n")
@@ -227,14 +227,15 @@ def trail_area():
     time_print(
         "As you're walking you take notice"
         " that everything is moving.\n"
-    )
+        )
     time_print("The trees, foliage and even the sky, always in motion.\n")
     time_print("You have been walking for hours now.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print(
-        f"Hey {Fore.YELLOW + name}! " + Fore.GREEN + Style.NORMAL + "says a rabbit"
+        f"Hey {Fore.YELLOW + name}! "
+        + Fore.GREEN + Style.NORMAL + "says a rabbit"
     )
     time.sleep(1)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
@@ -247,7 +248,7 @@ def trail_area():
     time_print(
         "Would you like to follow the rabbit"
         " or continue on the trail?\n"
-    )
+        )
     print(
         "+--------------------------------------"
         "---------------------------------------+"
@@ -257,7 +258,7 @@ def trail_area():
     while True:
         choice_rabbit_trail = input(
             "> " + Fore.YELLOW + Style.NORMAL
-        ).lower().strip()
+            ).lower().strip()
         if choice_rabbit_trail == "rabbit":
             print(Fore.GREEN + Style.BRIGHT)
             time_print("With quick thinking, you follow the rabbit...\n\n")
@@ -269,7 +270,7 @@ def trail_area():
             time_print(
                 "With rational thinking,"
                 " you decide to stay on the trail\n"
-            )
+                )
             time_print("You keep on walking as the rabbit bounces away.\n")
             time_print(". . .")
             time.sleep(3)
@@ -331,6 +332,11 @@ def cabin_area():
 
 
 def cellar_area():
+    """
+    Continue game after cabin area.
+    Give player option to collect item.
+    Item will have use in future interactions.
+    """
     print(Style.NORMAL)
     time_print(
         "In the cellar you see a rope holding together"
@@ -339,7 +345,7 @@ def cellar_area():
     time_print(
         "You could collect the rope"
         " but the cabin is old and unsteady.\n"
-    )
+        )
     time_print(". . .\n")
     time.sleep(2)
     print(Fore.YELLOW + Style.DIM)
@@ -363,8 +369,10 @@ def cellar_area():
         if choice_rope == "y":
             print(Fore.GREEN)
             time_print("You collected the rope...\n")
-            time_print("You took a chance and"
-                       " the building seems to be fine.\n")
+            time_print(
+                "You took a chance and"
+                " the building seems to be fine.\n"
+                )
             rope = True
             time.sleep(2)
             after_rope_area()
@@ -381,14 +389,26 @@ def cellar_area():
 
 
 def after_rope_area():
+    """
+    Continue game after cellar area.
+    Check if player collected item.
+    Different outcome depending on item is
+    collected or not.
+    """
     print(Style.NORMAL)
-    time_print("Looking around in the cellar you notice a hole behind a shelf.\n")
+    time_print(
+        "Looking around in the cellar"
+        " you notice a hole behind a shelf.\n"
+        )
     time_print("You move the shelf and find a underground path.\n")
     time_print("With curiosity you decide to explore this path.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("As you enter, the entrance behind you seals.\n")
-    time_print("The path is very dark, but soon you find yourself in a cave.\n")
+    time_print(
+        "The path is very dark,"
+        " but soon you find yourself in a cave.\n"
+        )
     time_print("Torches has been lit up here so you are able to see.\n")
     time_print("You look around and see a shiny crystal in the ceiling.\n")
     time_print(". . .\n")
@@ -407,7 +427,10 @@ def after_rope_area():
         if rope is True:
             if choice_crystal == "y":
                 print(Fore.GREEN)
-                time_print("You use your rope to climb up and grab the crystal.\n")
+                time_print(
+                    "You use your rope to climb"
+                    " up and grab the crystal.\n"
+                    )
                 crystal = True
                 time.sleep(2)
                 cave_area()
@@ -419,14 +442,25 @@ def after_rope_area():
                 cave_area()
                 break
             else:
-                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                    )
                 print(Fore.YELLOW)
         if rope is False:
             if choice_crystal == "y":
                 print(Fore.GREEN)
-                time_print("You do not have anything to grab the crystal with.\n")
+                time_print(
+                    "You do not have anything"
+                    " to grab the crystal with.\n"
+                    )
                 print(Fore.YELLOW + Style.DIM)
-                time_print("Maybe the rope would've come in handy... " + Fore.GREEN + Style.BRIGHT + "You think to yourself.\n")
+                time_print(
+                    "Maybe the rope would've come in handy... "
+                    + Fore.GREEN
+                    + Style.BRIGHT
+                    + "You think to yourself.\n"
+                )
                 time.sleep(2)
                 cave_area()
                 break
@@ -437,11 +471,20 @@ def after_rope_area():
                 cave_area()
                 break
             else:
-                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                    )
                 print(Fore.YELLOW)
 
 
 def cave_area():
+    """
+    Continue game after cellar or grass patch areas.
+    Check if player has necessary items to do interactions.
+    Different outcomes depending on if
+    player has collected items or not.
+    """
     time_print("Torches has been lit up here so you are able to see.\n")
     time_print("You look around and see a shiny crystal in the ceiling.\n")
     time_print(". . .\n")
@@ -461,7 +504,10 @@ def cave_area():
         if rope is True:
             if choice_crystal == "y":
                 print(Fore.GREEN)
-                time_print("You use your rope to climb up and grab the crystal.\n")
+                time_print(
+                    "You use your rope to climb"
+                    " up and grab the crystal.\n"
+                    )
                 crystal = True
                 time.sleep(2)
                 cave_exit()
@@ -473,15 +519,25 @@ def cave_area():
                 cave_exit()
                 break
             else:
-                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                    )
                 print(Fore.YELLOW)
         if mshroom is True:
             if choice_crystal == "y":
                 print(Fore.GREEN)
                 time_print("You're not sure how to reach the crystal.\n")
                 print(Fore.YELLOW)
-                time_print("Don't worry I got it, just reach out your hands. " + Fore.GREEN + "Says the mushroom.\n")
-                time_print("The mushroom seemed to use its mind to teleport the crystal into your hands.\n")
+                time_print(
+                    "Don't worry I got it, just reach out your hands. "
+                    + Fore.GREEN
+                    + "Says the mushroom.\n"
+                )
+                time_print(
+                    "The mushroom seemed to use its mind"
+                    " to teleport the crystal into your hands.\n"
+                )
                 crystal = True
                 time.sleep(2)
                 cave_exit()
@@ -493,14 +549,25 @@ def cave_area():
                 cave_exit()
                 break
             else:
-                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                )
                 print(Fore.YELLOW)
         if rope is False:
             if choice_crystal == "y":
                 print(Fore.GREEN)
-                time_print("You do not have anything to grab the crystal with.\n")
+                time_print(
+                    "You do not have anything"
+                    " to grab the crystal with.\n"
+                    )
                 print(Fore.YELLOW + Style.DIM)
-                time_print("Maybe the rope would've come in handy... " + Fore.GREEN + Style.BRIGHT + "You think to yourself.\n")
+                time_print(
+                    "Maybe the rope would've come in handy... "
+                    + Fore.GREEN
+                    + Style.BRIGHT
+                    + "You think to yourself.\n"
+                )
                 time.sleep(2)
                 cave_exit()
                 break
@@ -511,10 +578,20 @@ def cave_area():
                 cave_exit()
                 break
             else:
-                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                )
                 print(Fore.YELLOW)
 
+
 def cave_exit():
+    """
+    Continue game after cave area.
+    Player is able to win if items
+    are in possession.
+    Lose if not.
+    """
     print(Style.NORMAL)
     time_print("You continue walking through the cave.\n")
     time_print("You finally see an exit.\n")
@@ -522,15 +599,24 @@ def cave_exit():
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("As you exit the cave, you find yourself in a white space.\n")
-    time_print("In front of you, there's a stone structure, as tall as a door.\n")
+    time_print(
+        "In front of you, there's a stone structure,"
+        " as tall as a door.\n"
+        )
     time_print("You look around and the cave behind you is gone.\n")
     time_print(". . .\n\n")
     time.sleep(2)
-    time_print("You inspect this stone structure and find a keyhole, shaped like a crystal.\n")
+    time_print(
+        "You inspect this stone structure"
+        " and find a keyhole, shaped like a crystal.\n"
+    )
     time.sleep(2)
     if crystal is True:
         print(Style.BRIGHT)
-        time_print("You reach for the crystal you collected and place it in the keyhole.\n")
+        time_print(
+            "You reach for the crystal you"
+            " collected and place it in the keyhole.\n"
+        )
         time_print(". . .\n\n")
         time.sleep(2)
         time_print("You feel a tremble on the surface you're standing on.\n")
@@ -545,7 +631,10 @@ def cave_exit():
         if mshroom is True:
             time.sleep(2)
             print(Fore.YELLOW + Style.BRIGHT)
-            time_print("You're f#cked. " + Fore.GREEN + Style.NORMAL + "Says the mushroom.\n")
+            time_print(
+                "You're f#cked. "
+                + Fore.GREEN + Style.NORMAL + "Says the mushroom.\n"
+            )
         time_print(". . .\n\n")
         time.sleep(2)
         print(Fore.RED + Style.BRIGHT)
@@ -554,13 +643,21 @@ def cave_exit():
         time_print("Eternally.\n\n")
         time.sleep(2)
         print("GAME OVER")
-        #play_again()
+        # play_again()
+
 
 def player_win():
+    """
+    Display ending for player.
+    Player has won.
+    """
     print(Fore.GREEN + Style.NORMAL)
     global name
     time_print("You're back where you're once was.\n")
-    time_print("Floating in a space with lights, colors and geometrical shapes.\n")
+    time_print(
+        "Floating in a space with lights,"
+        " colors and geometrical shapes.\n"
+    )
     time_print("Traveling at unnatural speeds.\n")
     time_print(". . .\n\n")
     time.sleep(2)
@@ -573,7 +670,8 @@ def player_win():
     time_print("We thought we lost you.\n\n")
     print(Fore.GREEN)
     print("YOU WIN")
-    #play_again()
+    # play_again()
+
 
 def rabbit_area():
     """
@@ -585,9 +683,7 @@ def rabbit_area():
         "The rabbit is bouncing further"
         " in to the woods as you try to follow.\n"
     )
-    time_print(
-        "You trip on some roots and take a fall.\n"
-    )
+    time_print("You trip on some roots and take a fall.\n")
     time_print(". . .\n\n")
     time.sleep(2)
     time_print("You look around for the rabbit, but it's gone.\n")
@@ -672,6 +768,12 @@ def rabbit_area():
 
 
 def mshroom_area():
+    """
+    Continue game after rabbit area.
+    Gives player choice to collect mushroom.
+    Different outcomes will occur if
+    mushroom has been collected or not.
+    """
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print("Bummer...\n")
     time.sleep(1)
@@ -746,7 +848,11 @@ def after_mshroom_area():
                 time_print("You decide to not explore the patch of grass...\n")
                 time.sleep(1)
                 print(Fore.LIGHTBLUE_EX)
-                time_print("Man just leave me here then. " + Fore.GREEN + "Says the mushroom.\n")
+                time_print(
+                    "Man just leave me here then. "
+                    + Fore.GREEN
+                    + "Says the mushroom.\n"
+                )
                 time.sleep(1)
                 print(Fore.YELLOW)
                 time_print("You leave the mushroom.\n")
@@ -755,25 +861,30 @@ def after_mshroom_area():
                 break
             else:
                 print(
-                    Fore.RED +
-                    "Invalid choice, please choose either y or n.\n"
-                )
+                    Fore.RED + "Invalid choice,"
+                    " please choose either y or n.\n"
+                    )
                 print(Fore.YELLOW)
     elif mshroom is False:
         waterfall_area()
 
 
 def waterfall_area():
+    """
+    Continue game if mushroom not collected
+    or if player decides to not explore grass patch.
+    Give player option to explore waterfall.
+    """
     print(Fore.GREEN + Style.NORMAL)
-    time_print(
-        "You continue walking the woods.\n"
-    )
+    time_print("You continue walking the woods.\n")
     time_print("After walking for a while you come across a waterfall.\n")
     time.sleep(1)
     print(Fore.YELLOW + Style.DIM)
     time_print(
-        "Maybe there's a secret passage behind that waterfall. " +
-        Fore.GREEN + Style.NORMAL + "You think to yourself.\n"
+        "Maybe there's a secret passage behind that waterfall. "
+        + Fore.GREEN
+        + Style.NORMAL
+        + "You think to yourself.\n"
     )
     time_print(". . .\n")
     time.sleep(2)
@@ -808,13 +919,19 @@ def waterfall_area():
             break
         else:
             print(
-               Fore.RED + "Invalid choice,"
-               " please choose either y or n.\n"
-            )
+                Fore.RED + "Invalid choice,"
+                " please choose either y or n.\n"
+                )
             print(Fore.YELLOW)
 
 
 def survive_waterfall():
+    """
+    Continue game after waterfall area.
+    Second ending for player.
+    If player completes riddle, player win.
+    Otherwise, player lose.
+    """
     global name
     print(Style.NORMAL)
     time_print("You see the same rabbit that you met earlier.\n")
@@ -837,8 +954,14 @@ def survive_waterfall():
     print(Fore.GREEN + Style.NORMAL)
     time_print(". . .\n\n")
     time.sleep(2)
-    time_print("As you reach the top of the mountain you look out on the land.\n")
-    time_print("It's finite, like and island but no water, just an empty void.\n\n")
+    time_print(
+        "As you reach the top of the mountain"
+        " you look out on the land.\n"
+        )
+    time_print(
+        "It's finite, like and island but no water,"
+        " just an empty void.\n\n"
+        )
     time.sleep(2)
     print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
     time_print(f"I have one question for you {name},\n\n")
@@ -862,7 +985,10 @@ def survive_waterfall():
         print(Fore.RED)
         time_print("The weather up here gets really cold.\n")
         time.sleep(1)
-        time_print("It happens fast and suddenly it's colder than you ever could imagine.\n")
+        time_print(
+            "It happens fast and suddenly it's"
+            " colder than you ever could imagine.\n"
+        )
         time.sleep(1)
         time_print("You whole body freezes to ice.\n\n")
         time.sleep(2)
@@ -870,6 +996,11 @@ def survive_waterfall():
 
 
 def grasspatch_area():
+    """
+    Continue game after choosing to explore grass patch.
+    Second path for first ending.
+    Go to cave area.
+    """
     print(Style.NORMAL)
     time_print("You're standing on the patch of grass.\n")
     time_print(". . .\n\n")
@@ -882,5 +1013,5 @@ def grasspatch_area():
     cave_area()
 
 
-if __name__ == '__main__':
-    mshroom_area()
+if __name__ == "__main__":
+    game_intro()
