@@ -365,11 +365,13 @@ def cellar_area():
             time_print("You took a chance and"
                        " the building seems to be fine.\n")
             rope = True
+            time.sleep(2)
             after_rope_area()
             break
         elif choice_rope == "n":
             print(Fore.GREEN)
             time_print("You decide not to collect the rope...\n")
+            time.sleep(2)
             after_rope_area()
             break
         else:
@@ -379,7 +381,57 @@ def cellar_area():
 
 def after_rope_area():
     print(Style.NORMAL)
-    print("after rope")
+    time_print("Looking around in the cellar you notice a hole behind a shelf.\n")
+    time_print("You move the shelf and find a underground path.\n")
+    time_print("With curiosity you decide to explore this path.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("As you enter, the entrance behind you seales.\n")
+    time_print("The path is very dark, but soon you find yourself in a cave.\n")
+    time_print("Torches has been lit up here so you are able to see.\n")
+    time_print("You look around and see a shiny crystal in the ceiling.\n")
+    time_print(". . .\n")
+    time.sleep(2)
+    print(Style.BRIGHT)
+    time_print("Would you like to grab the crystal? (y/n)\n")
+    print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+    )
+
+    global rope
+    choice_crystal = input("> " + Fore.YELLOW).lower().strip()
+    while True:
+        if rope is True:
+            if choice_crystal == "y":
+                print(Fore.GREEN)
+                time_print("You use your rope to climb up and grab the crystal.\n")
+                time.sleep(2)
+                break
+            elif choice_crystal == "n":
+                print(Fore.GREEN)
+                time_print("You decide to not grab the crystal.\n")
+                time.sleep(2)
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
+        if rope is False:
+            if choice_crystal == "y":
+                print(Fore.GREEN)
+                time_print("You do not have anything to grab the crystal with.\n")
+                print(Fore.YELLOW + Style.DIM)
+                time_print("Maybe the rope would've come in handy... " + Fore.GREEN + Style.BRIGHT + "You think to yourself.\n")
+                time.sleep(2)
+                break
+            elif choice_crystal == "n":
+                print(Fore.GREEN)
+                time_print("You decide to not grab the crystal.\n")
+                time.sleep(2)
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
 
 
 def rabbit_area():
@@ -622,4 +674,4 @@ def grasspatch_area():
 
 
 if __name__ == '__main__':
-    mshroom_area()
+    cellar_area()
