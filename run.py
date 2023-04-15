@@ -11,6 +11,7 @@ mm_options = ["Play Game", "Instructions", "Exit Game"]
 rope = False
 name = ""
 mshroom = False
+crystal = False
 
 
 def time_print(string):
@@ -386,7 +387,7 @@ def after_rope_area():
     time_print("With curiosity you decide to explore this path.\n")
     time_print(". . .\n\n")
     time.sleep(2)
-    time_print("As you enter, the entrance behind you seales.\n")
+    time_print("As you enter, the entrance behind you seals.\n")
     time_print("The path is very dark, but soon you find yourself in a cave.\n")
     time_print("Torches has been lit up here so you are able to see.\n")
     time_print("You look around and see a shiny crystal in the ceiling.\n")
@@ -399,6 +400,7 @@ def after_rope_area():
         "---------------------------------------+"
     )
 
+    global crystal
     global rope
     choice_crystal = input("> " + Fore.YELLOW).lower().strip()
     while True:
@@ -406,12 +408,15 @@ def after_rope_area():
             if choice_crystal == "y":
                 print(Fore.GREEN)
                 time_print("You use your rope to climb up and grab the crystal.\n")
+                crystal = True
                 time.sleep(2)
+                cave_area()
                 break
             elif choice_crystal == "n":
                 print(Fore.GREEN)
                 time_print("You decide to not grab the crystal.\n")
                 time.sleep(2)
+                cave_area()
                 break
             else:
                 print(Fore.RED + "Invalid choice, please choose either y or n.\n")
@@ -423,15 +428,71 @@ def after_rope_area():
                 print(Fore.YELLOW + Style.DIM)
                 time_print("Maybe the rope would've come in handy... " + Fore.GREEN + Style.BRIGHT + "You think to yourself.\n")
                 time.sleep(2)
+                cave_area()
                 break
             elif choice_crystal == "n":
                 print(Fore.GREEN)
                 time_print("You decide to not grab the crystal.\n")
                 time.sleep(2)
+                cave_area()
                 break
             else:
                 print(Fore.RED + "Invalid choice, please choose either y or n.\n")
                 print(Fore.YELLOW)
+
+
+def cave_area():
+    print(Style.NORMAL)
+    time_print("You continue walking through the cave.\n")
+    time_print("You finally see an exit.\n")
+    time_print("You're walking towards that exit.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("As you exit the cave, you find yourself in a white space.\n")
+    time_print("In front of you, there's a stone structure, as tall as a door.\n")
+    time_print("You look around and the cave behind you is gone.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("You inspect this stone structure and find a keyhole, shaped like a crystal.\n")
+    time.sleep(2)
+    if crystal is True:
+        global name
+        print(Style.BRIGHT)
+        time_print("You reach for the crystal you collected and place it in the keyhole.\n")
+        time_print(". . .\n\n")
+        time.sleep(2)
+        time_print("You feel a tremble on the surface you're standing on.\n")
+        time.sleep(2)
+        time_print("You suddenly get sucked into the crystal.\n\n")
+        time.sleep(2)
+        time_print("You're back where you're once was.\n")
+        time_print("Floating in a space with lights, colors and geometrical shapes.\n")
+        time_print("Traveling at unnatural speeds.\n")
+        time_print(". . .\n\n")
+        time.sleep(2)
+        time_print("Suddenly, everything goes dark.\n")
+        time_print("You open your eyes and find yourself in your apartment.\n")
+        time_print("You're laying on the floor.\n")
+        time_print(". . .\n\n")
+        print(Fore.LIGHTBLUE_EX)
+        time_print(f"Hey {name}, are you alright?!\n")
+        time_print("We thought we lost you.\n\n")
+        print(Fore.GREEN)
+        print("YOU WIN")
+        #play_again()
+    if crystal is False:
+        time_print("You reach for your pockets.\n")
+        time.sleep(2)
+        time_print("You do not seem to have any that fits the keyhole.\n")
+        time_print(". . .\n\n")
+        time.sleep(2)
+        print(Fore.RED + Style.BRIGHT)
+        time_print("You are stuck here...\n")
+        time.sleep(2)
+        time_print("Eternally.\n\n")
+        time.sleep(2)
+        print("GAME OVER")
+        #play_again()
 
 
 def rabbit_area():
