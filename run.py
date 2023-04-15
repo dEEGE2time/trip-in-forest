@@ -442,6 +442,79 @@ def after_rope_area():
 
 
 def cave_area():
+    time_print("Torches has been lit up here so you are able to see.\n")
+    time_print("You look around and see a shiny crystal in the ceiling.\n")
+    time_print(". . .\n")
+    time.sleep(2)
+    print(Style.BRIGHT)
+    time_print("Would you like to grab the crystal? (y/n)\n")
+    print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+    )
+
+    global mshroom
+    global crystal
+    global rope
+    choice_crystal = input("> " + Fore.YELLOW).lower().strip()
+    while True:
+        if rope is True:
+            if choice_crystal == "y":
+                print(Fore.GREEN)
+                time_print("You use your rope to climb up and grab the crystal.\n")
+                crystal = True
+                time.sleep(2)
+                cave_exit()
+                break
+            elif choice_crystal == "n":
+                print(Fore.GREEN)
+                time_print("You decide to not grab the crystal.\n")
+                time.sleep(2)
+                cave_exit()
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
+        if mshroom is True:
+            if choice_crystal == "y":
+                print(Fore.GREEN)
+                time_print("You're not sure how to reach the crystal.\n")
+                print(Fore.YELLOW)
+                time_print("Don't worry I got it, just reach out your hands. " + Fore.GREEN + "Says the mushroom.\n")
+                time_print("The mushroom seemed to use its mind to teleport the crystal into your hands.\n")
+                crystal = True
+                time.sleep(2)
+                cave_exit()
+                break
+            elif choice_crystal == "n":
+                print(Fore.GREEN)
+                time_print("You decide to not grab the crystal.\n")
+                time.sleep(2)
+                cave_exit()
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
+        if rope is False:
+            if choice_crystal == "y":
+                print(Fore.GREEN)
+                time_print("You do not have anything to grab the crystal with.\n")
+                print(Fore.YELLOW + Style.DIM)
+                time_print("Maybe the rope would've come in handy... " + Fore.GREEN + Style.BRIGHT + "You think to yourself.\n")
+                time.sleep(2)
+                cave_exit()
+                break
+            elif choice_crystal == "n":
+                print(Fore.GREEN)
+                time_print("You decide to not grab the crystal.\n")
+                time.sleep(2)
+                cave_exit()
+                break
+            else:
+                print(Fore.RED + "Invalid choice, please choose either y or n.\n")
+                print(Fore.YELLOW)
+
+def cave_exit():
     print(Style.NORMAL)
     time_print("You continue walking through the cave.\n")
     time_print("You finally see an exit.\n")
@@ -469,6 +542,10 @@ def cave_area():
         time_print("You reach for your pockets.\n")
         time.sleep(2)
         time_print("You do not seem to have any that fits the keyhole.\n")
+        if mshroom is True:
+            time.sleep(2)
+            print(Fore.YELLOW + Style.BRIGHT)
+            time_print("You're f#cked. " + Fore.GREEN + Style.NORMAL + "Says the mushroom.\n")
         time_print(". . .\n\n")
         time.sleep(2)
         print(Fore.RED + Style.BRIGHT)
@@ -794,7 +871,15 @@ def survive_waterfall():
 
 def grasspatch_area():
     print(Style.NORMAL)
-    print("grass patch area...")
+    time_print("You're standing on the patch of grass.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("The ground crumbles as you fall into the ground.\n")
+    time_print("You feel a bit dizzy after the fall but you are ok.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("You look around and find yourself in a cave.\n")
+    cave_area()
 
 
 if __name__ == '__main__':
