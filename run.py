@@ -456,7 +456,6 @@ def cave_area():
     time_print("You inspect this stone structure and find a keyhole, shaped like a crystal.\n")
     time.sleep(2)
     if crystal is True:
-        global name
         print(Style.BRIGHT)
         time_print("You reach for the crystal you collected and place it in the keyhole.\n")
         time_print(". . .\n\n")
@@ -465,21 +464,7 @@ def cave_area():
         time.sleep(2)
         time_print("You suddenly get sucked into the crystal.\n\n")
         time.sleep(2)
-        time_print("You're back where you're once was.\n")
-        time_print("Floating in a space with lights, colors and geometrical shapes.\n")
-        time_print("Traveling at unnatural speeds.\n")
-        time_print(". . .\n\n")
-        time.sleep(2)
-        time_print("Suddenly, everything goes dark.\n")
-        time_print("You open your eyes and find yourself in your apartment.\n")
-        time_print("You're laying on the floor.\n")
-        time_print(". . .\n\n")
-        print(Fore.LIGHTBLUE_EX)
-        time_print(f"Hey {name}, are you alright?!\n")
-        time_print("We thought we lost you.\n\n")
-        print(Fore.GREEN)
-        print("YOU WIN")
-        #play_again()
+        player_win()
     if crystal is False:
         time_print("You reach for your pockets.\n")
         time.sleep(2)
@@ -494,6 +479,24 @@ def cave_area():
         print("GAME OVER")
         #play_again()
 
+def player_win():
+    print(Fore.GREEN + Style.NORMAL)
+    global name
+    time_print("You're back where you're once was.\n")
+    time_print("Floating in a space with lights, colors and geometrical shapes.\n")
+    time_print("Traveling at unnatural speeds.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("Suddenly, everything goes dark.\n")
+    time_print("You open your eyes and find yourself in your apartment.\n")
+    time_print("You're laying on the floor.\n")
+    time_print(". . .\n\n")
+    print(Fore.LIGHTBLUE_EX)
+    time_print(f"Hey {name}, are you alright?!\n")
+    time_print("We thought we lost you.\n\n")
+    print(Fore.GREEN)
+    print("YOU WIN")
+    #play_again()
 
 def rabbit_area():
     """
@@ -735,7 +738,58 @@ def waterfall_area():
 
 
 def survive_waterfall():
-    print("survive")
+    global name
+    print(Style.NORMAL)
+    time_print("You see the same rabbit that you met earlier.\n")
+    time_print("You decide to follow the rabbit once again.\n")
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("The rabbit stopped.\n")
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print("Hey! I know you're following me.\n")
+    print(Fore.GREEN + Style.NORMAL)
+    time_print("You walk up towards the rabbit.\n")
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print(f"Imma be honest with you {name}.\n\n")
+    time.sleep(1)
+    time_print("Where do you think you're going?\n")
+    time_print("Where do you even think you are?\n\n")
+    time.sleep(1)
+    time_print("No matter, you're near the end.\n")
+    time_print("Follow me up this mountain, you don't really have a choice.\n")
+    print(Fore.GREEN + Style.NORMAL)
+    time_print(". . .\n\n")
+    time.sleep(2)
+    time_print("As you reach the top of the mountain you look out on the land.\n")
+    time_print("It's finite, like and island but no water, just an empty void.\n\n")
+    time.sleep(2)
+    print(Fore.LIGHTBLUE_EX + Style.BRIGHT)
+    time_print(f"I have one question for you {name},\n\n")
+    time_print("What gets shorter as it gets longer?\n\n")
+    time_print("You only get 1 chance.\n")
+    print(Fore.GREEN + Style.NORMAL)
+    time_print("The rabbit vanishes into thin air.\n\n")
+    print(Style.BRIGHT)
+    time_print("What gets shorter as it gets longer?\n")
+    print(
+        "+--------------------------------------"
+        "---------------------------------------+"
+    )
+
+    riddle_answer = input("> " + Fore.YELLOW).lower().strip()
+    if riddle_answer == "life":
+        player_win()
+    else:
+        time_print("Your answer gave no sign of it being correct.\n")
+        time.sleep(2)
+        print(Fore.RED)
+        time_print("The weather up here gets really cold.\n")
+        time.sleep(1)
+        time_print("It happens fast and suddenly it's colder than you ever could imagine.\n")
+        time.sleep(1)
+        time_print("You whole body freezes to ice.\n\n")
+        time.sleep(2)
+        print("GAME OVER")
 
 
 def grasspatch_area():
