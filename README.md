@@ -206,18 +206,23 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 
 * [Clear interpreter console](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console)
     * Used this forum as a tutorial for clearing the interpreter console.
+    
 <br>
 
 * [Print one character by character in a string](https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line)
     * Used this forum as a tutorial for printing character by character in strings.
+
 <br>
 
 * [Colorama - Font color](https://pypi.org/project/colorama/)
     * Different font colors depending on which dialogue. (Blue = NPC, Red = Lose etc..)
+
 <br>
 
 * [Pyfiglet - ASCII font art](https://pypi.org/project/pyfiglet/0.7/)
     * ASCII font art for main menu title.
+
+<br>
 
 * Mentor, Daisy Mc Girr
 <br>

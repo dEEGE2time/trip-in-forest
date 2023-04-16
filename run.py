@@ -62,7 +62,7 @@ def game_intro():
             game_launch()
             break
         elif intro_choice == "2":
-            print("instructions")
+            display_instructions()
             break
         elif intro_choice == "3":
             print("Exiting game...")
@@ -70,6 +70,31 @@ def game_intro():
         else:
             print(Fore.RED + "Invalid choice, please choose either 1, 2 or 3.")
             print(Fore.YELLOW)
+
+
+def display_instructions():
+    cls()
+    print(Fore.GREEN + Style.NORMAL)
+    print(
+        "Welcome to Trip in Forest!\n\n"
+
+        "You will play through a story with different paths and endings.\n"
+        "Some paths will lead you to your"
+        " death as others will let you survive.\n"
+        "Your objective is to reach the end without dying.\n\n"
+
+        "To play, simply type in the input field what you want to do.\n"
+        "The game will direct you on what you can type.\n"
+        "If your input is wrong you will simply be told so "
+        "and can try again.\n"
+        "Lower/Uppercase letters do not matter nor do whitespaces.\n\n"
+        "Try not to type anything while dialogue is printing out, "
+        "It might cause your input to become invalid.\n\n"
+
+        "Have fun playing my game!\n\n\n"
+    )
+    input('Press "Enter" to return to main menu.')
+    game_intro()
 
 
 def get_name():
