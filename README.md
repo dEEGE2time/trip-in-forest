@@ -218,4 +218,6 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 
 * [Pyfiglet - ASCII font art](https://pypi.org/project/pyfiglet/0.7/)
     * ASCII font art for main menu title.
+
+* Mentor, Daisy Mc Girr
 <br>
