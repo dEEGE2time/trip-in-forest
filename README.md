@@ -1,16 +1,15 @@
 # Trip in Forest
 
-I made a Rock Paper Scissor of chance against a computer up to a score of 5. View the live website [here](https://deege2time.github.io/pp2/).
+A python text-based adventure game set in a fantasy world. The players objective is to find a way to the ending, there are in total of two endings as the time of writing this. The user will come across choices resulting in death/survival and also get the change to collect items if the player desires. These items will affect how the game is played out.
 
-![Mockup](docs/readme-images/website-images/mockup.png)
+View the live website [here](https://trip-in-forest.herokuapp.com/).
+
+![Mockup]()
 
 ## Table of Contents
 <hr>
 
-1. [Design](#design)
-    1. [Design Choice](#design-choice)
-    2. [Colors](#colors)
-    3. [Fonts](#fonts)
+1. [How to play](#how-to-play)
 2. [Features](#features)
     1. [Existing Features](#existing-features)
     2. [Future Features](#future-features)
@@ -33,69 +32,82 @@ I made a Rock Paper Scissor of chance against a computer up to a score of 5. Vie
 6. [Credits](#credits)
     1. [Content](#content)
 
-## **Design**
+## **Tutorial**
 <hr>
 
-### **Design choice**
+As a text-based adventure game, all you need is a keyboard. The game will present choices for the player to make and they simply types what it wants to do. The goal is to survive through the story.
 
-Designed with retro in mind. Used Pixel icons and font, as well as dashed borders.
-<br>
+When first starting the game the player will be presented with a main menu and the title.
+Here the player can choose to
+* 1. Start Game
+* 2. Instructions
+* 3. Exit Game
 
-### **Colors**
+These three options state the obvious, would the player type "1" into the input field, the game starts and the player get to choose their name. All inputs do not go by numbers, the player will sometimes have to answer with "y" for yes or "n" for no. The game will also asks questions such as "Would you like to walk or run?" and the player will have to enter "walk" or "run". All the choices that player has to make will be displayed for them.
 
-Black / White are the main colors, used green and red to indicate lose / win or to distinguish you from the computer. You (green) computer (red)
-<img src="docs/readme-images/website-images/color-palette.png">
-<br>
+If the player makes a typo or an answer unrelated to the situation, the game will tell them the input is invalid and will ask them to try again, capital letters and spaces do not matter.
 
-### **Fonts**
-Chosen font is simple and pixelated to fit website theme.
-* [VT323](https://fonts.google.com/specimen/VT323)
+When player dies/wins they will be asked to play again if they wish to do so.
 
 ## **Features**
 <hr>
 
-* Header
-    * Logo is displayed here
-
-![Header](docs/readme-images/website-images/header.png)
-
 * Main Menu
-    * Three buttons for "Play", "Rules" and "Credits"
-    * When one button is clicked, hide main menu and display whatever was clicked.
+    * First page of the game presented with three options.
 
-![Main Menu](docs/readme-images/website-images/main-menu.png)
+    1. Start Game
+        * Clears the screen
+        * Starts game
+    2. Instructions
+        * Clears the screen
+        * Display Instructions
+    3. Exit Game
+        * Quits the game
 
-* Play
-    * Three clickable images with event listeners. (Rock / Paper / Scissor images).
-    * When player has chosen, computer chooses randomly between the three.
-    * Display each players choice in the middle.
-    * Player will Win / Lose / Draw each round.
-    * First to score 5 points wins the game.
+![Main Menu]()
+<hr>
 
-![Play](docs/readme-images/website-images/gamewindow.png) 
+* Instructions
+    * Displays intructions so the player knows how to play.
+    * Press "Q" to clear the screen and return to main menu.
 
-* Endscreen
-    * Final result and score will be displayed here.
-    * Button to return to main menu.
+![Instructions]()
+<hr>
 
-![Endscreen](docs/readme-images/website-images/endscreen.png)
+* Username
+    * Player can choose their own username for the duration of that game.
+    * An empty name will result as an invalid input.
 
-* Rules
-    * Here the user will be able to read the rules.
-    * Button to return to main menu.
+![Username]()
+<hr>
 
-![Rules](docs/readme-images/website-images/rules.png)
+* Choices
+    * At every point the game asks you a question, you will be presented with two choices.
+    * Player makes choice by typing into the input field.
+    * Different routes and different endings depending on choice.
 
-* Credits
-    * Here the user will be able to see the credits.
-    * Button to return to main menu.
+![Choices]() 
+<hr>
 
-![Credits](docs/readme-images/website-images/credits.png)
+* Items
+    * Player will encounter items they will be asked if they want to pick up.
+    * Items can impact gameplay and endings.
+    * Some items can not be gathered if they don't meet the requirements for it.
 
-* Footer
-    * Portfolio Project 2
+![Items]()
+<hr>
 
-![Credits](docs/readme-images/website-images/footer.png)
+* Announcements
+    * Game will display in the terminal whether the player has lost or won.
+    * Game will display in the terminal all choices the player makes.
+
+![Announcements]()
+<hr>
+
+* Replay
+    * Give the player an option to replay if they lose or win.
+
+![Replay]()
 
 
 ### **Existing Features**
