@@ -72,20 +72,34 @@ def game_intro():
             print(Fore.YELLOW)
 
 
+def get_name():
+    print(Fore.GREEN + Style.BRIGHT)
+    global name
+    print("Enter your name:")
+    while True:
+        name = input("> " + Fore.YELLOW + Style.NORMAL)
+        if name == "":
+            print(
+                Fore.RED + "Invalid name,"
+                " please have atleast one character."
+            )
+            print(Fore.YELLOW)
+            continue
+        else:
+            print(Fore.GREEN + Style.NORMAL)
+            time_print(
+            f"Hello {Fore.YELLOW+Style.BRIGHT + name + Style.NORMAL+Fore.GREEN}"
+            + ", welcome to..."
+            )
+            break
+
 def game_launch():
     """
     Launch game and display story.
     Let player make their first choice.
     """
     cls()
-    print(Fore.GREEN + Style.BRIGHT)
-    global name
-    print("Enter your name:")
-    name = input("> " + Fore.YELLOW + Style.NORMAL)
-    print(Fore.GREEN + Style.NORMAL)
-    time_print(
-        f"Hello {Fore.YELLOW + Style.BRIGHT + name + Style.NORMAL + Fore.GREEN}, welcome to..."
-    )
+    get_name()
     time.sleep(2)
     cls()
 

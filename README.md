@@ -9,13 +9,9 @@ View the live website [here](https://trip-in-forest.herokuapp.com/).
 ## Table of Contents
 <hr>
 
-1. [How to play](#how-to-play)
+1. [Tutorial](#tutorial)
 2. [Features](#features)
-    1. [Existing Features](#existing-features)
-    2. [Future Features](#future-features)
 3. [Technologies](#technologies)
-    1. [Languages](#languages)
-    2. [Tools](#tools)
 4. [Testing](#testing)
     1. [Validation-HTML](#validation-html)
     2. [Validation-CSS](#validation-css)
@@ -109,64 +105,52 @@ When player dies/wins they will be asked to play again if they wish to do so.
 
 ![Replay]()
 
-
-### **Existing Features**
-<br>
-
-* Responsive design
-* Navigation through the website
-* Playable Rock Paper Scissor game
-* Show rules
-* Show credits
-* Button to return to main menu
-* Show scores and increment when it should be incremented
-
-### **Future Features**
-<br>
-
-* Animation for the game
-* Enter username
-* Scoreboard
-
 ## **Technologies**
 <hr>
 
-### **Languages**
+* Python
+    * Programming language for development of the game.
+
 <br>
 
-* HTML
-    * Core content and structure written using HTML.
-
-
-* CSS
-    * Styling and responsive design written using CSS.
-
-* JavaScript
-    * Back-End coding to make the game work and show/hide elements written using JavaScript.
-
-
-### **Tools**
-<br>
-
-* Github
+* [Github](https://github.com/)
     * Source code hosted on github and deployed through github pages.
 
+<br>
 
-* Git
+* [Git](https://git-scm.com/)
     * Commit and pushing code using git
 
+<br>
 
-* Cloudconvert
-    * Used https://cloudconvert.com/png-to-webp to convert images to webp.
+* [Heroku](https://www.heroku.com/home)
+    * Deployment of game.
 
+<br>
 
-* Tinypng
-    * Used https://tinypng.com/ to compress webp images.
+* Library [black](https://pypi.org/project/black/)
+    * Used to format code.
 
+<br>
 
-* Google Fonts
-    * Used [VT323](https://fonts.google.com/specimen/VT323)
+* Library [colorama](https://pypi.org/project/colorama/)
+    * Used to change font color.
 
+<br>
+
+* Library [pyfiglet](https://pypi.org/project/pyfiglet/0.7/)
+    * Convert strings to ASCII font art.
+
+<br>
+
+* Module [time](https://docs.python.org/3/library/time.html)
+    * Used to make delays between strings.
+    * Used with [sys](https://docs.python.org/3/library/sys.html) to print character by character in a string.
+
+<br>
+
+* Module [sys]()
+    * Used with [time](https://docs.python.org/3/library/time.html) to print character by character in a string.
 
 ## **Testing**
 <hr>
