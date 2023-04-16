@@ -10,17 +10,18 @@ View the live website [here](https://trip-in-forest.herokuapp.com/).
 <hr>
 
 1. [Tutorial](#tutorial)
-2. [Features](#features)
-3. [Technologies](#technologies)
-4. [Testing](#testing)
+2. [Vision](#vision)
+3. [Features](#features)
+4. [Technologies](#technologies)
+5. [Testing](#testing)
     1. [CI Python Linter](#ci-python-linter)
     2. [Functional Testing](#functional-testing)
-5. [Bugs](#bugs)
-6. [Deployment](#deployment)
+6. [Bugs](#bugs)
+7. [Deployment](#deployment)
     1. [Deploying through github pages](#deploying-through-github-pages)
     2. [Fork other repositories](#fork-other-repositories)
     3. [Clone other repositories](#clone-other-repositories)
-7. [Credits](#credits)
+8. [Credits](#credits)
     1. [Content](#content)
 
 ## **Tutorial**
@@ -39,6 +40,13 @@ These three options state the obvious, would the player type "1" into the input 
 If the player makes a typo or an answer unrelated to the situation, the game will tell them the input is invalid and will ask them to try again, capital letters and spaces do not matter.
 
 When player dies/wins they will be asked to play again if they wish to do so.
+
+## **Vision**
+<hr>
+
+![lucidchart1](docs/readme-images/vision/lucidchart1.png)
+![lucidchart2](docs/readme-images/vision/lucidchart2.png)
+![lucidchart3](docs/readme-images/vision/lucidchart3.png)
 
 ## **Features**
 <hr>
