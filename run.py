@@ -88,8 +88,7 @@ def get_name():
         else:
             print(Fore.GREEN + Style.NORMAL)
             time_print(
-            f"Hello {Fore.YELLOW+Style.BRIGHT + name + Style.NORMAL+Fore.GREEN}"
-            + ", welcome to..."
+                f"Hello {name}, welcome to..."
             )
             break
 
@@ -102,7 +101,6 @@ def game_launch():
     get_name()
     time.sleep(2)
     cls()
-
     print(Fore.GREEN + Style.BRIGHT)
     time_print("TRIP IN FOREST\n\n")
     print(
