@@ -43,7 +43,7 @@ def game_intro():
             "---------------------------------------+"
         )
     )
-    print(figlet_format("Trip in forest", font="larry3d", justify="center"))
+    print(figlet_format("Trip in forest", font="standard", justify="center"))
     print(
         "+--------------------------------------"
         "---------------------------------------+"
