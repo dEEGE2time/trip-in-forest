@@ -204,24 +204,18 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 ## **Credits**
 <hr>
 
-* [Updating src attribute](https://www.w3schools.com/jsref/prop_img_src.asp)
-    * Used this tutorial for updating images.
+* [Clear interpreter console](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console)
+    * Used this forum as a tutorial for clearing the interpreter console.
 <br>
 
-* [location.reload();](https://www.w3schools.com/jsref/met_loc_reload.asp)
-    * Used to return user to main menu (refresh page).
+* [Print one character by character in a string](https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line)
+    * Used this forum as a tutorial for printing character by character in strings.
 <br>
 
-* [Pixel icons created by Dooder - Flaticon](https://www.flaticon.com/free-icons/pixel)
+* [Colorama - Font color](https://pypi.org/project/colorama/)
+    * Different font colors depending on which dialogue. (Blue = NPC, Red = Lose etc..)
 <br>
 
-* [VT323 Font - Google Fonts](https://fonts.google.com/specimen/VT323)
-<br>
-
-### **Content**
-
-Pixel hand icons by [Pixel icons created by Dooder - Flaticon](https://www.flaticon.com/free-icons/pixel).
-<br>
-
-Font by [VT323 Font - Google Fonts](https://fonts.google.com/specimen/VT323)
+* [Pyfiglet - ASCII font art](https://pypi.org/project/pyfiglet/0.7/)
+    * ASCII font art for main menu title.
 <br>
