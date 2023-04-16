@@ -62,14 +62,14 @@ When player dies/wins they will be asked to play again if they wish to do so.
     * Displays intructions so the player knows how to play.
     * Press "Q" to clear the screen and return to main menu.
 
-![Instructions](docs/readme-images/features/)
+![Instructions](docs/readme-images/features/instructions.png)
 <hr>
 
 * Username
     * Player can choose their own username for the duration of that game.
     * An empty name will result as an invalid input.
 
-![Username](docs/readme-images/features/)
+![Username](docs/readme-images/features/username.gif)
 <hr>
 
 * Choices
@@ -77,7 +77,7 @@ When player dies/wins they will be asked to play again if they wish to do so.
     * Player makes choice by typing into the input field.
     * Different routes and different endings depending on choice.
 
-![Choices](docs/readme-images/features/) 
+![Choices](docs/readme-images/features/choices.gif) 
 <hr>
 
 * Items
@@ -85,20 +85,20 @@ When player dies/wins they will be asked to play again if they wish to do so.
     * Items can impact gameplay and endings.
     * Some items can not be gathered if they don't meet the requirements for it.
 
-![Items](docs/readme-images/features/)
+![Items](docs/readme-images/features/items.gif)
 <hr>
 
 * Announcements
     * Game will display in the terminal whether the player has lost or won.
     * Game will display in the terminal all choices the player makes.
 
-![Announcements](docs/readme-images/features/)
+![Announcements](docs/readme-images/features/accounements.png)
 <hr>
 
 * Replay
     * Give the player an option to replay if they lose or win.
 
-![Replay](docs/readme-images/features/)
+![Replay](docs/readme-images/features/replay.gif)
 
 ## **Technologies**
 <hr>
@@ -206,7 +206,7 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 
 * [Clear interpreter console](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console)
     * Used this forum as a tutorial for clearing the interpreter console.
-    
+
 <br>
 
 * [Print one character by character in a string](https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line)
