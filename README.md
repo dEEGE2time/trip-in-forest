@@ -69,7 +69,7 @@ When player dies/wins they will be asked to play again if they wish to do so.
     3. Exit Game
         * Quits the game
 
-![Main Menu](docs/readme-images/features/)
+![Main Menu](docs/readme-images/features/main-menu.png)
 <hr>
 
 * Instructions
