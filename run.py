@@ -32,6 +32,11 @@ def cls():
 
 
 def play_again():
+    """
+    Displayed when game has ended.
+    Gives user the option to play again
+    if they desire.
+    """
     print(Fore.GREEN + Style.BRIGHT)
     print("Would you like to play again? (y/n)")
     while True:
@@ -92,6 +97,10 @@ def game_intro():
 
 
 def display_instructions():
+    """
+    Clears the screen and display instructions page.
+    Press Enter to return to main menu.
+    """
     cls()
     print(Fore.GREEN + Style.NORMAL)
     print(
@@ -117,6 +126,10 @@ def display_instructions():
 
 
 def get_name():
+    """
+    User enters username.
+    Invalid if username is blank.
+    """
     print(Fore.GREEN + Style.BRIGHT)
     global name
     print("Enter your name:")
