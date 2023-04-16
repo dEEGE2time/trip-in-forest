@@ -45,8 +45,14 @@ When player dies/wins they will be asked to play again if they wish to do so.
 <hr>
 
 ![lucidchart1](docs/readme-images/vision/lucidchart1.png)
+<br><br>
+
 ![lucidchart2](docs/readme-images/vision/lucidchart2.png)
+<br><br>
+
 ![lucidchart3](docs/readme-images/vision/lucidchart3.png)
+<br><br>
+
 
 ## **Features**
 <hr>
@@ -183,14 +189,31 @@ Bugs will be fixed in the future as I do not have the time due to project deadli
 ## **Deployment**
 <hr>
 
-The website was deployed through the use of GitHub Pages, a feature built in to GitHub.
+### **Deploying through Heroku**
+How to deploy your app to Heroku.
 
-### **Deploying through github pages**
-1. In your repository, click on "Settings" from the top of the menu.
-2. In the side menu to your left, click "Pages" in "Code and automation" section.
-3. Set "Source" to "Deploy from branch".
-4. Set desired branch and set director to /(root).
-5. Click "Save" and wait for github to display your URL at the top of this page.
+1. Create a [Heroku](https://www.heroku.com/home) account if you don't have one.
+2. In your dashboard, click "Create new app".
+3. In your new app, navigate to Settings where you will add Config Vars and Buildpacks.
+4. Create a Config Vars
+    1. Click "Reveal Config Vars"
+    2. Set "KEY" to PORT and "VALUE" to 8000.
+    3. Click "Add"
+5. Scroll down to Buildpacks.
+    1. Click "Add buildpack".
+    2. Select Python, then save changes.
+    3. Do the same for NodeJS.
+    4. Your buildpacks should be in following order:
+        1. Python
+        2. NodeJS
+6. Navigate to Deploy tab.
+7. Select GitHub as deployment method.
+8. Connect to GitHub.    
+9. Search for the GitHub repository you wish to deploy.
+10. Click "Connect"
+11. You can choose Automatic or Manual deployment, up to preference.
+12. Once finished deploying, click "View" to view your app on Heroku.
+
 <br>
 
 ### **Fork other repositories**
