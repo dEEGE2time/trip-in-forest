@@ -224,5 +224,8 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 
 <br>
 
+* [ezGIF](https://ezgif.com/)
+    * Convert .mp4 to .gif for readme.
+
 * Mentor, Daisy Mc Girr
 <br>
