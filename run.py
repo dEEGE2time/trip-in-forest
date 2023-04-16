@@ -330,7 +330,7 @@ def trail_area():
             time_print("You keep on walking as the rabbit bounces away.\n")
             time_print(". . .")
             time.sleep(3)
-            print(Fore.RED + Style.DIM)
+            print(Fore.RED)
             time_print("\n")
             time.sleep(2)
             time_print("You have been walking for years now, yes, years.\n")
@@ -341,8 +341,8 @@ def trail_area():
             time.sleep(1)
             time_print("Walking...\n\n")
             time.sleep(1)
-            print(Fore.RED + Style.BRIGHT + "GAME OVER")
-            quit()
+            print("GAME OVER")
+            play_again()
         else:
             print(
                 Fore.RED + "Invalid choice,"
@@ -633,7 +633,7 @@ def cave_exit():
         time_print("Eternally.\n\n")
         time.sleep(2)
         print("GAME OVER")
-        # play_again()
+        play_again()
 
 
 def player_win():
@@ -660,7 +660,7 @@ def player_win():
     time_print("We thought we lost you.\n\n")
     print(Fore.GREEN)
     print("YOU WIN")
-    # play_again()
+    play_again()
 
 
 def rabbit_area():
@@ -745,7 +745,7 @@ def rabbit_area():
             time_print("You die of food poisoning.\n")
             time_print("Tragic...\n\n")
             print("GAME OVER")
-            quit()
+            play_again()
         elif choice_mshroom == "n":
             print(Fore.GREEN)
             time_print("You choose not to eat the mushroom...\n\n")
@@ -900,7 +900,7 @@ def waterfall_area():
                 " rocks and starts bleeding out...\n\n"
             )
             print("GAME OVER")
-            quit()
+            play_again()
         elif choice_waterfall == "n":
             print(Fore.GREEN)
             print("You decide to not explore the waterfall...\n")
@@ -983,6 +983,7 @@ def survive_waterfall():
         time_print("You whole body freezes to ice.\n\n")
         time.sleep(2)
         print("GAME OVER")
+        play_again()
 
 
 def grasspatch_area():
