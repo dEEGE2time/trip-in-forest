@@ -2,7 +2,7 @@ import os
 import time
 import sys
 from colorama import Fore, Style
-from pyfiglet import figlet_format
+import pyfiglet
 
 # main menu list
 mm_options = ["Play Game", "Instructions", "Exit Game"]
@@ -61,7 +61,8 @@ def game_intro():
             "---------------------------------------+"
         )
     )
-    print(figlet_format("Trip in forest", font="standard", justify="center"))
+    title = pyfiglet.figlet_format("Trip in Forest", justify="center")
+    print(title)
     print(
         "+--------------------------------------"
         "---------------------------------------+"
