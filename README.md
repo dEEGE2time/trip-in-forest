@@ -55,21 +55,21 @@ When player dies/wins they will be asked to play again if they wish to do so.
     3. Exit Game
         * Quits the game
 
-![Main Menu]()
+![Main Menu](docs/readme-images/features/)
 <hr>
 
 * Instructions
     * Displays intructions so the player knows how to play.
     * Press "Q" to clear the screen and return to main menu.
 
-![Instructions]()
+![Instructions](docs/readme-images/features/)
 <hr>
 
 * Username
     * Player can choose their own username for the duration of that game.
     * An empty name will result as an invalid input.
 
-![Username]()
+![Username](docs/readme-images/features/)
 <hr>
 
 * Choices
@@ -77,7 +77,7 @@ When player dies/wins they will be asked to play again if they wish to do so.
     * Player makes choice by typing into the input field.
     * Different routes and different endings depending on choice.
 
-![Choices]() 
+![Choices](docs/readme-images/features/) 
 <hr>
 
 * Items
@@ -85,20 +85,20 @@ When player dies/wins they will be asked to play again if they wish to do so.
     * Items can impact gameplay and endings.
     * Some items can not be gathered if they don't meet the requirements for it.
 
-![Items]()
+![Items](docs/readme-images/features/)
 <hr>
 
 * Announcements
     * Game will display in the terminal whether the player has lost or won.
     * Game will display in the terminal all choices the player makes.
 
-![Announcements]()
+![Announcements](docs/readme-images/features/)
 <hr>
 
 * Replay
     * Give the player an option to replay if they lose or win.
 
-![Replay]()
+![Replay](docs/readme-images/features/)
 
 ## **Technologies**
 <hr>
@@ -144,7 +144,7 @@ When player dies/wins they will be asked to play again if they wish to do so.
 
 <br>
 
-* Module [sys]()
+* Module [sys](https://docs.python.org/3/library/sys.html)
     * Used with [time](https://docs.python.org/3/library/time.html) to print character by character in a string.
 
 ## **Testing**
@@ -161,6 +161,16 @@ All clear, no errors found
 <br>
 
 I manually tested every combination of choices myself, all outputs worked as expected.
+<br>
+
+## **Bugs**
+<hr>
+
+* When typing during dialogue, correct input will display as invalid.
+* Colorama will sometimes display wrong color after invalid input.
+
+Bugs will be fixed in the future as I do not have the time due to project deadline or the knowledge.
+<br>
 
 ## **Deployment**
 <hr>
