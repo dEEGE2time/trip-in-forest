@@ -31,6 +31,24 @@ def cls():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def play_again():
+    print(Fore.GREEN + Style.BRIGHT)
+    print("Would you like to play again? (y/n)")
+    while True:
+        retry_answer = input("> " + Fore.YELLOW).lower().strip()
+        if retry_answer == "y":
+            cls()
+            game_intro()
+            break
+        elif retry_answer == "n":
+            print(Fore.GREEN)
+            print("Thank you for playing!")
+            quit()
+        else:
+            print(Fore.RED + "Invalid choice, please choose either y or n.")
+            print(Fore.YELLOW)
+
+
 def game_intro():
     """
     Display intro for player and get player input
@@ -181,7 +199,7 @@ def game_launch():
             print(Fore.GREEN + Style.BRIGHT)
             time_print("You decide to stay...\n")
             time.sleep(3)
-            print(Fore.RED + Style.DIM)
+            print(Fore.RED)
             time_print("You stayed in this dark space for weeks...\n")
             time.sleep(1)
             time_print(
@@ -190,7 +208,7 @@ def game_launch():
                 )
             time.sleep(1)
             print(Fore.RED + Style.BRIGHT + "GAME OVER")
-            quit()
+            play_again()
         else:
             print(Fore.RED + "Invalid choice, please choose either y or n.\n")
             print(Fore.YELLOW)
