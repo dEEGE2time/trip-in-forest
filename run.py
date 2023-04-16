@@ -61,7 +61,7 @@ def game_intro():
             "---------------------------------------+"
         )
     )
-    title = pyfiglet.figlet_format("Trip in Forest", justify="center")
+    title = pyfiglet.figlet_format("Trip In Forest", font="banner", justify="center")
     print(title)
     print(
         "+--------------------------------------"
@@ -125,7 +125,7 @@ def get_name():
         if name == "":
             print(
                 Fore.RED + "Invalid name,"
-                " please have atleast one character."
+                " please have at least one character."
             )
             print(Fore.YELLOW)
             continue
