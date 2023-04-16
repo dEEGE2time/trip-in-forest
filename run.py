@@ -92,6 +92,7 @@ def get_name():
             )
             break
 
+
 def game_launch():
     """
     Launch game and display story.

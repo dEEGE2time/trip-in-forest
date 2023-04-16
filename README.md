@@ -13,19 +13,14 @@ View the live website [here](https://trip-in-forest.herokuapp.com/).
 2. [Features](#features)
 3. [Technologies](#technologies)
 4. [Testing](#testing)
-    1. [Validation-HTML](#validation-html)
-    2. [Validation-CSS](#validation-css)
-    3. [Validation-JavaScript](#validation-javascript)
-    4. [Accessibility](#accessibility)
-    5. [Performance](#performance)
-    6. [Responsive Design](#responsive-design)
-    7. [Browser Compatibility](#browser-compatibility)
-    8. [Functional Testing](#functional-testing)
-5. [Deployment](#deployment)
+    1. [CI Python Linter](#ci-python-linter)
+    2. [Functional Testing](#functional-testing)
+5. [Bugs](#bugs)
+6. [Deployment](#deployment)
     1. [Deploying through github pages](#deploying-through-github-pages)
     2. [Fork other repositories](#fork-other-repositories)
     3. [Clone other repositories](#clone-other-repositories)
-6. [Credits](#credits)
+7. [Credits](#credits)
     1. [Content](#content)
 
 ## **Tutorial**
@@ -155,96 +150,17 @@ When player dies/wins they will be asked to play again if they wish to do so.
 ## **Testing**
 <hr>
 
-### **Validation-HTML**
-Used the [W3C Markup Validation Service](https://validator.w3.org/) with urls. All pages passed with 2 errors.
-<br>
-<img src="docs/readme-images/testing/html-validation.png">
+### **CI Python Linter**
 
-**Warning message: "Bad value for attribute src on element img: Must be non-empty. (src="", because I was intending on having no image but an element to replace with user and computer choice)** 
+Results:
+All clear, no errors found
 
-<br>
-
-### **Validation-CSS**
-Used the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) with url and stylesheet. All pages passed with 0 errors.
-<br>
-<img src="docs/readme-images/testing/css-validation.png">
-
-<br>
-
-### **Validation-JavaScript**
-Used the [JSHint](https://jshint.com/) and pasted code. returnMainMenu() has been called in html with onclick="returnMainMenu()", thus JSHint did not recognize this.
-<br>
-<img src="docs/readme-images/testing/jshint.png">
-
-### **Accessibility**
-Ran through WAVE, web accessibility evaluation tool. All pages passed with 0 errors.
-<br>
-<img src="docs/readme-images/testing/wave.png">
-
-<br>
-
-### **Performance**
-Ran through Google Lighthouse via Google Devtools, Performance score 98.
-<br>
-<img src="docs/readme-images/testing/lighthouse.png">
-
-<br>
-
-### **Responsive Design**
-<br>
-
-Tested for all devices 320px and up.
-* Test results from Google Devtools
-    * Google Devtools
-    * iPhone
-
-### **Browser Compatibility**
-<br>
-
-Test from following browsers without problems
-* Google Chrome
-* Firefox
-* Safari (iPhone)
+![ci_python_linter](docs/readme-images/testing/ci_python_linter.png)
 
 ### **Functional Testing**
 <br>
 
-**Features in main menu**
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Play button | Start game | Brings user to game window | Works as expected |
-| Rules button | Show rules | Brings user to rules window | Works as expected |
-| Credits button | Show credits | Brings user to credits window | Works as expected |
-<br>
-
-**Features in game window**
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Clickable Images | Select Rock / Paper / Scissor | Display chosen image in middle (bottom) | Works as expected |
-| Computer | Select random image between Rock / Paper / Scissor after player has chosen | Display chosen image in middle (top) | Works as expected |
-| Quit button | Return to main menu | Brings user back to main menu, game reset. | Works as expected |
-<br>
-
-**Features in end screen**
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Results | Display match results and scores | Shows your score, computer score and player won/lost  | Works as expected |
-| Quit button | Return to main menu | Brings user back to main menu, game reset | Works as expected |
-<br>
-
-**Features in rules**
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Rules | Rules written in a box | Shows user the rules for the game | Works as expected |
-| Back button | Return to main menu | Brings user back to main menu | Works as expected |
-<br>
-
-**Features in credits**
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Credits | Credits written in a box | Shows user the credits for the game | Works as expected |
-| Back button | Return to main menu | Brings user back to main menu | Works as expected |
-<br>
+I manually tested every combination of choices myself, all outputs worked as expected.
 
 ## **Deployment**
 <hr>
