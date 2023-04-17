@@ -122,7 +122,9 @@ def display_instructions():
         "Have fun playing my game!\n\n\n"
     )
     input('Press "Enter" to return to main menu.')
+    cls()
     game_intro()
+    
 
 
 def get_name():

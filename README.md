@@ -4,8 +4,6 @@ A python text-based adventure game set in a fantasy world. The players objective
 
 View the live website [here](https://trip-in-forest.herokuapp.com/).
 
-![Mockup]()
-
 ## Table of Contents
 <hr>
 
@@ -31,9 +29,9 @@ As a text-based adventure game, all you need is a keyboard. The game will presen
 
 When first starting the game the player will be presented with a main menu and the title.
 Here the player can choose to
-* 1. Start Game
-* 2. Instructions
-* 3. Exit Game
+1. Start Game
+2. Instructions
+3. Exit Game
 
 These three options state the obvious, would the player type "1" into the input field, the game starts and the player get to choose their name. All inputs do not go by numbers, the player will sometimes have to answer with "y" for yes or "n" for no. The game will also asks questions such as "Would you like to walk or run?" and the player will have to enter "walk" or "run". All the choices that player has to make will be displayed for them.
 
@@ -58,15 +56,13 @@ When player dies/wins they will be asked to play again if they wish to do so.
 <hr>
 
 * Main Menu
-    * First page of the game presented with three options.
-
-    1. Start Game
+    * Start Game
         * Clears the screen
         * Starts game
-    2. Instructions
+    * Instructions
         * Clears the screen
         * Display Instructions
-    3. Exit Game
+    * Exit Game
         * Quits the game
 
 ![Main Menu](docs/readme-images/features/main-menu.png)
@@ -175,6 +171,209 @@ All clear, no errors found
 <br>
 
 I manually tested every combination of choices myself, all outputs worked as expected.
+
+* game_intro()
+    * The main menu, presented with game title and three options.
+        * Start Game
+            * When user inputs 1, game launches.
+        * Instructions
+            * When user inputs 2, show instructions.
+        * Exit Game
+            * When user inputs 3, quits game.
+    * If user enters anything else
+        * Error message: "Invalid choice, please choose either 1, 2 or 3.".
+        * Try input again.
+<br>
+<br>
+
+* display_instructions()
+    * cls() function gets called to clear the console.
+    * Prints out instructions.
+    * Uses input to press Enter to continue code.
+    * Call cls() to clear the console.
+    * Call game_intro() returning to main menu.
+<br>
+<br>
+
+* game_launch()
+    * Call cls() to clear console.
+    * Call get_name() function to let user choose username.
+    * Call cls() once again to clear console.
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", continue game and call function hole_area().
+        * If user inputs "n", user lose and call function play_again().
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* hole_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "trail", continue game and call function trail_area().
+        * If user inputs "cabin", continue game and call function cabin_area().
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either trail or cabin.".
+            * Try input again
+<br>
+<br>
+
+* trail_area()
+    * Prints story for the user.
+        * Calls name variable in story via f-string.
+    * User gets presented with choice.
+        * If user inputs "rabbit", user lose and call function play_again()
+        * If user inputs "trail", continue game and call function rabbit_area()
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either rabbit or trail.".
+            * Try input again.
+<br>
+<br>
+
+* cabin_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", continue game and call function cellar_area().
+        * If user inputs "n", continue game and call function trail_area().
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* cellar_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", set global variable "rope" to True.
+            * Continue game and calls function after_rope_area()
+        * If user inputs "n", keep global variable "rope" as False.
+            * Continue game and calls function after_rope_area()
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* after_rope_area()
+    * Prints story for the user.
+    * Calls function cave_area().
+<br>
+<br>
+
+* cave_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y"
+            * Set global variable "crystal" to True only if global variable "rope" or "mshroom" is True.
+            * Game can let you collect crystal only if conditions are met.
+            * Calls function cave_exit().
+        * If user inputs "n"
+            * Keep global variable "crystal" as False.
+            * Calls function cave_exit()
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* cave_exit()
+    * Prints story for the user.
+    * If global variable "crystal" is True
+        * Prints story for the user.
+        * Calls function player_win()
+        * If user comes to this path, they have won.
+    * If global variable "crystal" is False
+        * Prints story for user.
+        * If global variable "mshroom" is True, print extra dialogue.
+        * "GAME OVER"
+        * Calls function play_again()
+<br>
+<br>
+
+* player_win()
+    * Prints ending for user.
+    * Call name variable in win message.
+    * Call function play_again()
+<br>
+<br>
+
+* rabbit_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", lose game and call function play_again().
+        * If user inputs "n", continue game and call function mshroom_area().
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* mshroom_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", set global variable "mshroom" to True
+            * Call fucntion after_mshroom_area()
+        * If user inputs "n" continue game and call fucntion after_mshroom_area()
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* after_mshroom_area()
+    * If global variable "mshroom" is True
+        * Prints secret path for the user.
+        * User gets presented with choice.
+            * If user inputs "y", continue game and call function grasspatch_area().
+            * If user inputs "n"
+                * Set global variable "mshroom" to False.
+                * Call function waterfall_area().
+            * If user inputs anything else
+                * Error message: "Invalid choice, please choose either y or n".
+                * Try input again.
+    * If global variable "mshroom" is False
+        * Call function waterfall_area().
+<br>
+<br>
+
+* waterfall_area()
+    * Prints story for the user.
+    * User gets presented with choice.
+        * If user inputs "y", lose game and call function play_again().
+        * If user inputs "n", continue game and call function survive_waterfall().
+        * If user inputs anything else
+            * Error message: "Invalid choice, please choose either y or n".
+            * Try input again.
+<br>
+<br>
+
+* survive_waterfall()
+    * Prints story for the user.
+    * Gets global variable "name" for use in f-string.
+    * User gets presented with a riddle.
+        * If user inputs "life", call function player_win().
+        * If user inputs anything else
+            * User lose game and call function play_again()
+<br>
+<br>
+
+* grasspatch_area()
+    * Prints story for the user.
+    * Call function cave_area()'
+<br>
+<br>
+
+* play_again()
+    * Prints "Would you like to play again?"
+    * If user input "y"
+        * Call cls() function to clear the console.
+        * Call game_intro() function.
+    * If user input "n"
+        * Print thank you message.
+        * Call quit().
+
 <br>
 
 ## **Bugs**
