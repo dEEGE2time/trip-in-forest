@@ -123,8 +123,7 @@ def display_instructions():
     )
     input('Press "Enter" to return to main menu.')
     cls()
-    game_intro()
-    
+    game_intro()   
 
 
 def get_name():
@@ -202,7 +201,6 @@ def game_launch():
         "---------------------------------------+"
     )
 
-    # Provide result based on player choice, stay = death, jump = survive
     while True:
         choice_hole = input("> " + Fore.YELLOW + Style.NORMAL).lower().strip()
         if choice_hole == "y":
@@ -263,7 +261,6 @@ def hole_area():
         "---------------------------------------+"
     )
 
-    # Provide result based on player choice, trail = path 1, cabin = path 2
     while True:
         choice_trail_cabin = input(
             "> " + Fore.YELLOW + Style.NORMAL
@@ -326,7 +323,6 @@ def trail_area():
         "---------------------------------------+"
     )
 
-    # Provide result based on player choice, rabbit = survive, trail = death
     while True:
         choice_rabbit_trail = input(
             "> " + Fore.YELLOW + Style.NORMAL
@@ -863,6 +859,7 @@ def after_mshroom_area():
                 print(Fore.YELLOW)
                 time_print("You leave the mushroom.\n")
                 time.sleep(1)
+                mshroom = False
                 waterfall_area()
                 break
             else:
