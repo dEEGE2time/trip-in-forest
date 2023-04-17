@@ -42,6 +42,10 @@ When player dies/wins they will be asked to play again if they wish to do so.
 ## **Vision**
 <hr>
 
+Together with my girlfriend we mapped out a simple story. While she was writing with pen and paper, I was mapping out in lucidchart. We both agreed upon the idea that it would be a world of fantasy.
+
+Here are is the lucidchart divided into three screenshots:
+
 ![lucidchart1](docs/readme-images/vision/lucidchart1.png)
 <br><br>
 
